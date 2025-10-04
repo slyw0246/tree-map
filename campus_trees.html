@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Campus Trees</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="icon" type="x-icon" href="./images/MapIcon.png"> 
+    <!-- website icon found in this website: https://www.pngegg.com/en/search?q=paper+Map#google_vignette -->
+    <style>
+        body { 
+            margin: 0; /*no space around div*/
+            padding: 0; /*no space inside div*/
+            display: flex; /*flexbox for organizing the webiste*/
+            flex-direction: column; /*column direction flex*/
+            background-color: #FEF9F2; /*background color of the website*/
+        }
+        
+        .navbar {
+            background-color: #b6d898; /* Background color for navbar */
+            overflow: hidden;
+            display: flex; /* Use flexbox for layout */
+            padding-left: 10px;
+            align-items: center; /* Vertically center items */
+            justify-content: flex-start; /* align everythingt to the left*/
+            padding: 10px 20px; /* Add padding for aesthetics */
+            font: 0.8rem "verdana", sans-serif; /* Font settings */
+            gap: 20px; /* Add some space between the header and the buttons */
+        }
+
+        .navbar h1 {
+            /*font-size: 1.2rem; /* Larger font for header */
+            color: black; /* Text color for header */
+            margin: 0; /* Remove default margin */
+            margin-left: 20px;
+        }
+
+        .nav-links {
+            list-style: none; /* Remove bullet points */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            display: flex; /* Use flexbox for horizontal layout */
+            align-items: center; /* Vertically center the buttons */
+            gap: 10px; /* Add space between buttons */
+        }
+
+        .nav-links li {
+            padding-top: 0; /* Remove padding to vertically center in the nav bar */
+        }
+
+        .nav-links a {
+            color: black; /* Link color */
+            text-decoration: none; /* Remove underline */
+            font-size: 0.8rem; /* Font size for links */
+            padding: 10px 15px; /* Increase padding for bigger clickable area */
+            background-color: #FDEEF1; /* Background color for links */
+            /*border: 2px solid #4e5965; /* Border color and thickness for the frame */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+            display: inline-block; /* Ensure padding applies evenly around text */
+        }
+
+        .nav-links a:hover {
+            background-color:  #f8f8f8; /* Background color on hover */
+        }
+
+        /* New styles for responsiveness */
+        
+        
+
+        #title {
+            font: small-caps bold 1.8rem "verdana", sans-serif; /*set a font*/
+            text-align: center; /*center the title for aesthetics*/
+            background-color: #f0eeb3; /*background color of title box*/
+            padding: 20px; /*add padding and margin for aesthetics*/
+            margin: 10px;
+        }
+
+        /* add a menu for toggle*/
+         #menu {  
+        background: #F5E8E9; /*set the base color of toggle buttons when it's not active*/
+        position: absolute;
+        z-index: 5; /*position toggle above map*/
+        top: 170px; /* make sure that it is below the nav bar and title*/
+        right: 10px; /*distance to the right border*/
+        border-radius: 3px; /*make angle round*/
+        width: 120px;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        font-family: "courier", monospace; /*match the font to tracking page*/
+        }
+
+    @media (min-width:320px) and (max-width:600px){
+        #menu {
+            top: 250px; /*one a phone, position toggle below title*/
+        }
+    }
+
+        #menu a {
+            font-size: 13px; /*font size of names*/
+            color: #404040; /*color of words*/
+            display: block;
+            margin: 0;
+            padding: 0;
+            padding: 10px;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+            text-align: center;
+        }
+
+        #menu a:last-child {
+            border: none;
+        }
+
+         #menu a:hover { /* make sure that when you hover it changes color for clarity */
+            background-color: #f8f8f8; /* hover background color when it's not active*/
+            color: #404040; /*color of words*/
+        }
+
+        #menu a.active { /* new color for when it is toggled on */
+            background-color: #F8798D; /*background when it's active*/
+            color: #ffffff;
+        }
+
+        #menu a.active:hover { /* new color for toggled on and hovered on */
+            background: #F894A3; /*hover background when it's active*/
+            color: #ffffff;
+        }
+        #map { 
+            width: 95%; /*width of the map takes up 95% of the page*/
+            height: 730px; /*set the height of the page to a reasonable value*/
+            align-self: center; /*center the map*/
+            border-radius: 5px; /*make the border angle round*/
+            position: relative; /*relative position to apply z-index*/
+            z-index: 1; /*Move the map behind toggle bars*/
+        } 
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>McGill Tree Planting Guide </h1>
+        <ul class="nav-links">
+            <li><a href="">link1</a></li>
+            <li><a href="">link2</a></li>
+        </ul>
+    </nav>
+    <nav id="menu"></nav> <!-- nav bar for toggle menu-->
+    <h1 id="title">Tree Species to Plant in Different Areas on Campus</h1>
+    <iframe id = "map" src="campus_tree_map.html" style="border:none;"></iframe>
+</body>
