@@ -21,14 +21,15 @@
             display: flex; /* Use flexbox for layout */
             padding-left: 10px;
             align-items: center; /* Vertically center items */
-            justify-content: flex-start; /* align everythingt to the left*/
+            justify-content: space-between; /* align everythingt to the left*/
             padding: 10px 20px; /* Add padding for aesthetics */
+            padding-right: 70px;
             font: 0.8rem "verdana", sans-serif; /* Font settings */
             gap: 20px; /* Add some space between the header and the buttons */
         }
 
         .navbar h1 {
-            /*font-size: 1.2rem; /* Larger font for header */
+            font-size: 1.2rem; /* Larger font for header */
             color: black; /* Text color for header */
             margin: 0; /* Remove default margin */
             margin-left: 20px;
@@ -40,7 +41,7 @@
             padding: 0; /* Remove default padding */
             display: flex; /* Use flexbox for horizontal layout */
             align-items: center; /* Vertically center the buttons */
-            gap: 10px; /* Add space between buttons */
+            gap: 20px; /* Add space between buttons */
         }
 
         .nav-links li {
@@ -52,15 +53,17 @@
             text-decoration: none; /* Remove underline */
             font-size: 0.8rem; /* Font size for links */
             padding: 10px 15px; /* Increase padding for bigger clickable area */
-            background-color: #FDEEF1; /* Background color for links */
+            background-color: #eaf4cf; /* Background color for links */
             /*border: 2px solid #4e5965; /* Border color and thickness for the frame */
             border-radius: 5px; /* Rounded corners */
             transition: background-color 0.3s ease; /* Smooth hover effect */
             display: inline-block; /* Ensure padding applies evenly around text */
+            width: 120px;
+            text-align: center;
         }
 
         .nav-links a:hover {
-            background-color:  #f8f8f8; /* Background color on hover */
+            background-color:  #ffffe9; /* Background color on hover */
         }
 
         /* New styles for responsiveness */
@@ -68,11 +71,13 @@
         
 
         #title {
-            font: small-caps bold 1.8rem "verdana", sans-serif; /*set a font*/
+            /*font: small-caps bold 1.8rem "verdana", sans-serif; /*set a font*/
+            font: small-caps bold 1.7rem "verdana", sans-serif;
             text-align: center; /*center the title for aesthetics*/
             background-color: #f0eeb3; /*background color of title box*/
             padding: 20px; /*add padding and margin for aesthetics*/
             margin: 10px;
+            border-radius: 10px;
         }
 
         /* add a menu for toggle*/
@@ -139,8 +144,9 @@
     <nav class="navbar">
         <h1>McGill Tree Planting Guide </h1>
         <ul class="nav-links">
-            <li><a href="">link1</a></li>
-            <li><a href="">link2</a></li>
+            <li><a href="">Species List</a></li>
+            <li><a href="">Soil Collection</a></li>
+            <li><a href="">Historical Ecology</a></li>
         </ul>
     </nav>
     <h1 id="title">Tree Species to Plant in Different Areas on Campus</h1>
